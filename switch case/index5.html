@@ -1,0 +1,60 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    PROBLEMA: INVESTIGAÇÃO CRIMINAL
+    Faça um script que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+    - "Telefonou para a vítima?"
+    - "Esteve no local do crime?"
+    - "Morava perto da vítima?"
+    - "Devia para a vítima?"
+    - "Já trabalhou com a vítima?"
+    O script deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+    */
+
+    // ENTRADA
+    const telefonou = prompt("Telefonou para a vítima? (responda com sim/não)").toUpperCase();
+    const local = prompt("Esteve no local do crime? (responda com sim/não)").toUpperCase();
+    const mira = prompt("Morava perto da vítima? (responda com sim/não)").toUpperCase();
+    const devia = prompt("Devia para a vítima? (responda com sim/não)").toUpperCase();
+    const trabalhou = prompt("Já trabalhou com a vítima? (responda com sim/não)").toUpperCase();
+
+    let respostasPositivas = 0;
+
+    // PROCESSAMENTO
+    if (telefonou === "SIM") {
+        respostasPositivas++;
+    }
+
+    if (local === "SIM") {
+        respostasPositivas++;
+    }
+    if (mira === "SIM") {
+        respostasPositivas++;
+    }
+    if (devia === "SIM") {
+        respostasPositivas++;
+    }
+    if (trabalhou === "SIM") {
+        respostasPositivas++;
+    }
+
+    // SAÍDA
+    switch (respostasPositivas) {
+        case 0:
+        case 1:
+            alert("Você é inocente.");
+            break;
+        case 2:
+            alert("Você é suspeito.");
+            break;
+        case 3:
+        case 4:
+            alert("Você é cúmplice.");
+            break;
+        case 5:
+            alert("Você é assassino.");
+            break;
+        default:
+            alert("Coloque valores corretos.");
+    }
+</script>
